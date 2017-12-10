@@ -3,7 +3,8 @@ import org.junit.Test;
 
 public class MainTest {
   @Test
-  public void testFoo() {
-    Assert.assertEquals(10, (new Main()).foo());
+  public void test1_empty() {
+    int[] arr = {};
+    Assert.assertEquals(0, (new Main()).myOr(arr));
   }
 }
