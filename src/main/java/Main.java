@@ -1,15 +1,17 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println(consoleOr(args));
+    }
+    public static String consoleOr(String[] args) {
         int[] input = new int[args.length];
         for (int i = 0; i < args.length; i++) {
             try {
                 input[i] = Integer.parseInt(args[i]);
             } catch (NumberFormatException error) {
-                System.out.println(String.format("Infernal error: wrong input: %s.", error.getMessage()));
-                return;
+                return String.format("Infernal error: wrong input: %s.", error.getMessage());
             }
         }
-        System.out.println(rangeOr(input));
+        return Integer.toString(rangeOr(input));
     }
     public static int rangeOr(int[] arg) {
         int ans = 0;
