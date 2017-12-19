@@ -19,4 +19,20 @@ public class MainTest {
     int [] arr = {1, 3};
     Assert.assertEquals(3, (new Main()).rangeOr(arr));
   }
+  public void testEmptyInput() {
+    string[] arr = {};
+    Assert.assertEquals(0, (new Main()).consoleOr(arr));
+  }
+  public void testNoIntegerInput_1 {
+    string[] arr = {"1", "2", "a"};
+    Assert.assertEquals("Cannot parse string at position 2", (new Main()).consoleOr(arr));
+  }
+  public void testNoIntegerInput_2 {
+    string[] arr = {"1", "2", "1a"};
+    Assert.assertEquals("Cannot parse string at position 2", (new Main()).consoleOr(arr));
+  }
+  public void testConsoleInput {
+    string[] arr = {"1", "2", "1"};
+    Assert.assertEquals("3", (new Main()).consoleOr(arr));
+  }
 }
